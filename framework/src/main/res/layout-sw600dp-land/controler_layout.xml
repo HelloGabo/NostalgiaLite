@@ -119,41 +119,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical"
             android:padding="10dp">
-
-            <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
-                android:id="@+id/button_a_turbo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="#0000"
-                android:src="@drawable/r_button_a_turbo_selector" />
-
-            <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
-                android:id="@+id/button_a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/button_b"
-                android:layout_margin="2dp"
-                android:background="#0000"
-                android:src="@drawable/r_button_a_selector" />
-
-            <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
-                android:id="@+id/button_b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="2dp"
-                android:background="#0000"
-                android:src="@drawable/r_button_b_selector" />
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
                 <nostalgia.framework.ui.multitouchbutton.MultitouchTwoButton
                     android:id="@+id/button_ab"
                     android:layout_width="wrap_content"
@@ -164,7 +137,6 @@
                     android:src="@drawable/r_button_ab_selector"
                     multitouch:first_button="@id/button_a"
                     multitouch:second_button="@id/button_b" />
-
                 <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
                     android:id="@+id/button_b_turbo"
                     android:layout_width="wrap_content"
@@ -172,6 +144,33 @@
                     android:layout_gravity="right"
                     android:background="#0000"
                     android:src="@drawable/r_button_b_turbo_selector" />
+                <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
+                    android:id="@+id/button_a_turbo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="#0000"
+                    android:src="@drawable/r_button_a_turbo_selector" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
+                    android:id="@+id/button_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="2dp"
+                    android:background="#0000"
+                    android:src="@drawable/r_button_b_selector" />
+                <nostalgia.framework.ui.multitouchbutton.MultitouchImageButton
+                    android:id="@+id/button_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/button_b"
+                    android:layout_margin="2dp"
+                    android:background="#0000"
+                    android:src="@drawable/r_button_a_selector" />
             </LinearLayout>
         </LinearLayout>
 
