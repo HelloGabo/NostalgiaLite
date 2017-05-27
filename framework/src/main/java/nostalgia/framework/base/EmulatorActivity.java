@@ -115,8 +115,7 @@ public abstract class EmulatorActivity extends Activity implements
         }
 
         @Override
-        public void onBenchmarkEnded(Benchmark benchmark, int steps,
-                                     long totalTime) {
+        public void onBenchmarkEnded(Benchmark benchmark, int steps, long totalTime) {
             float millisPerFrame = totalTime / (float) steps;
             numTests++;
 
@@ -214,29 +213,24 @@ public abstract class EmulatorActivity extends Activity implements
         boolean needsBenchmark = quality != 2 && !alreadyBenchmarked;
 
         if (hasOpenGL20) {
-            openGLView = new OpenGLView(this, emulator, paddingLeft,
-                    paddingTop, shader);
+            openGLView = new OpenGLView(this, emulator, paddingLeft, paddingTop, shader);
 
             if (needsBenchmark) {
-                openGLView.setBenchmark(new Benchmark(OPEN_GL_BENCHMARK, 200,
-                        benchmarkCallback));
+                openGLView.setBenchmark(new Benchmark(OPEN_GL_BENCHMARK, 200, benchmarkCallback));
             }
         }
 
-        emulatorView = openGLView != null ? openGLView : new UnacceleratedView(
-                this, emulator, paddingLeft, paddingTop);
+        emulatorView = openGLView != null ? openGLView : new UnacceleratedView(this, emulator, paddingLeft, paddingTop);
         controllers = new ArrayList<EmulatorController>();
         touchController = new TouchController(this);
         controllers.add(touchController);
         touchController.connectToEmulator(0, emulator);
-        dynamic = new DynamicDPad(this, getWindowManager().getDefaultDisplay(),
-                touchController);
+        dynamic = new DynamicDPad(this, getWindowManager().getDefaultDisplay(), touchController);
         controllers.add(dynamic);
         dynamic.connectToEmulator(0, emulator);
         QuickSaveController qsc = new QuickSaveController(this, touchController);
         controllers.add(qsc);
-        KeyboardController kc = new KeyboardController(emulator,
-                getApplicationContext(), game.checksum, this);
+        KeyboardController kc = new KeyboardController(emulator, getApplicationContext(), game.checksum, this);
         RemoteController rc1 = new RemoteController(this);
         RemoteController rc2 = new RemoteController(this);
         RemoteController rc3 = new RemoteController(this);

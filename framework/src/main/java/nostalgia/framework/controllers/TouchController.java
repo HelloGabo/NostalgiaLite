@@ -88,54 +88,36 @@ public class TouchController implements EmulatorController,
     }
 
     private View createView() {
-        LayoutInflater inflater = (LayoutInflater) emulatorActivity
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) emulatorActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.controler_layout, null);
-        multitouchLayer = (MultitouchLayer) layout
-                .findViewById(R.id.touch_layer);
-        MultitouchImageButton up = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_up);
+        multitouchLayer = (MultitouchLayer) layout.findViewById(R.id.touch_layer);
+        MultitouchImageButton up = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_up);
         up.setOnMultitouchEventlistener(this);
         resIdMapping.put(R.id.button_up, mapping.get(EmulatorController.KEY_UP));
-        MultitouchImageButton down = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_down);
+        MultitouchImageButton down = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_down);
         down.setOnMultitouchEventlistener(this);
-        resIdMapping.put(R.id.button_down,
-                mapping.get(EmulatorController.KEY_DOWN));
-        MultitouchImageButton left = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_left);
+        resIdMapping.put(R.id.button_down, mapping.get(EmulatorController.KEY_DOWN));
+        MultitouchImageButton left = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_left);
         left.setOnMultitouchEventlistener(this);
-        resIdMapping.put(R.id.button_left,
-                mapping.get(EmulatorController.KEY_LEFT));
-        MultitouchImageButton right = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_right);
+        resIdMapping.put(R.id.button_left, mapping.get(EmulatorController.KEY_LEFT));
+        MultitouchImageButton right = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_right);
         right.setOnMultitouchEventlistener(this);
-        resIdMapping.put(R.id.button_right,
-                mapping.get(EmulatorController.KEY_RIGHT));
-        MultitouchImageButton a = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_a);
+        resIdMapping.put(R.id.button_right, mapping.get(EmulatorController.KEY_RIGHT));
+        MultitouchImageButton a = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_a);
         a.setOnMultitouchEventlistener(this);
         resIdMapping.put(R.id.button_a, mapping.get(EmulatorController.KEY_A));
-        MultitouchImageButton b = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_b);
+        MultitouchImageButton b = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_b);
         b.setOnMultitouchEventlistener(this);
         resIdMapping.put(R.id.button_b, mapping.get(EmulatorController.KEY_B));
-        aTurbo = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_a_turbo);
+        aTurbo = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_a_turbo);
         aTurbo.setOnMultitouchEventlistener(this);
-        resIdMapping.put(R.id.button_a_turbo,
-                mapping.get(EmulatorController.KEY_A_TURBO));
-        bTurbo = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_b_turbo);
+        resIdMapping.put(R.id.button_a_turbo, mapping.get(EmulatorController.KEY_A_TURBO));
+        bTurbo = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_b_turbo);
         bTurbo.setOnMultitouchEventlistener(this);
-        resIdMapping.put(R.id.button_b_turbo,
-                mapping.get(EmulatorController.KEY_B_TURBO));
-        abButton = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_ab);
-        fastForward = (MultitouchImageButton) multitouchLayer
-                .findViewById(R.id.button_fast_forward);
-        fastForward
-                .setOnMultitouchEventlistener(new OnMultitouchEventListener() {
+        resIdMapping.put(R.id.button_b_turbo, mapping.get(EmulatorController.KEY_B_TURBO));
+        abButton = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_ab);
+        fastForward = (MultitouchImageButton) multitouchLayer.findViewById(R.id.button_fast_forward);
+        fastForward.setOnMultitouchEventlistener(new OnMultitouchEventListener() {
                     @Override
                     public void onMultitouchExit(MultitouchBtnInterface btn) {
                         emulatorActivity.onFastForwardUp();
@@ -146,8 +128,7 @@ public class TouchController implements EmulatorController,
                         emulatorActivity.onFastForwardDown();
                     }
                 });
-        MultitouchButton select = (MultitouchButton) layout
-                .findViewById(R.id.button_select);
+        MultitouchButton select = (MultitouchButton) layout.findViewById(R.id.button_select);
 
         if (select != null) {
             select.setOnMultitouchEventlistener(new OnMultitouchEventListener() {
@@ -162,8 +143,7 @@ public class TouchController implements EmulatorController,
             });
         }
 
-        MultitouchButton start = (MultitouchButton) layout
-                .findViewById(R.id.button_start);
+        MultitouchButton start = (MultitouchButton) layout.findViewById(R.id.button_start);
         start.setOnMultitouchEventlistener(new OnMultitouchEventListener() {
             @Override
             public void onMultitouchExit(MultitouchBtnInterface btn) {
@@ -174,8 +154,7 @@ public class TouchController implements EmulatorController,
                 sendKey(EmulatorController.KEY_START);
             }
         });
-        MultitouchImageButton menu = (MultitouchImageButton) layout
-                .findViewById(R.id.button_menu);
+        MultitouchImageButton menu = (MultitouchImageButton) layout.findViewById(R.id.button_menu);
         menu.setOnMultitouchEventlistener(new OnMultitouchEventListener() {
             @Override
             public void onMultitouchExit(MultitouchBtnInterface btn) {

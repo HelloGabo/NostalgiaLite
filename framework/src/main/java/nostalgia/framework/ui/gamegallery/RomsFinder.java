@@ -53,8 +53,7 @@ public class RomsFinder extends Thread {
     }
 
     public static ArrayList<GameDescription> getAllGames(DatabaseHelper helper) {
-        return helper.selectObjsFromDb(GameDescription.class, false,
-                "GROUP BY checksum", null);
+        return helper.selectObjsFromDb(GameDescription.class, false, "GROUP BY checksum", null);
     }
 
     private void getRomAndPackedFiles(File root, List<File> result,
