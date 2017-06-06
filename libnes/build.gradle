@@ -14,7 +14,10 @@ model {
 
         ndk {
             moduleName "nostalgia"
-            platformVersion 19      // 21及以上才可以支持64位架构，但是一些旧系统会出现崩溃的异常  https://stackoverflow.com/questions/29509779/unsatisfiedlinkerror-when-compiling-with-api21
+
+            // http://blog.csdn.net/darwinlong/article/details/48467527
+            // 21及以上才可以支持64位架构，但是一些旧系统会出现崩溃的异常
+            platformVersion 19      // APP_PLATFORM := android-19
             abiFilters.addAll(['armeabi', 'armeabi-v7a', 'x86'])
             stl = "gnustl_static"
             ldLibs.addAll(['z', 'log', 'jnigraphics', 'GLESv1_CM'])
